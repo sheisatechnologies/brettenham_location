@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Blob Video Reveal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      height: 100%;
+      background: #f5f5f5;
+    }
+
+    canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      color: black;
+      padding-top: 100px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 6vw;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 4vw;
+    }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 48px; }
+      p { font-size: 18px; }
+    }
+
+    .blob-video {
+      position: absolute;
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      z-index: 3;
+      display: none;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+      clip-path: ellipse(70% 100% at 50% 50%);
+    }
+  </style>
+</head>
+<body>
+  <canvas id="blobCanvas"></canvas>
+
+  <video id="blobVid" class="blob-video" muted autoplay loop>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+  </video>
+
+  <div class="container content">
+    <h1>Three Vibrant Districts</h1>
+    <p>Hover 3 seconds on a blob to reveal a video</p>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('blobCanvas');
+    const ctx = canvas.getContext('2d');
+    const blobVid = document.getElementById('blobVid');
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let isHovering = false;
+    let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+    let hoverTimer = null;
+    let currentBlobIndex = null;
+    let blobs = [];
+
+    canvas.addEventListener('mousemove', (event) => {
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
+
+      isHovering = true;
+
+      let foundBlob = null;
+
+      blobs.forEach((blob, index) => {
+        const dx = blob.center.x - mouse.x;
+        const dy = blob.center.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+
+        if (dist < blob.radius + 40) {
+          foundBlob = index;
+        }
+      });
+
+      if (foundBlob !== currentBlobIndex) {
+        clearTimeout(hoverTimer);
+        blobVid.style.display = 'none';
+        currentBlobIndex = foundBlob;
+
+        if (currentBlobIndex !== null) {
+          hoverTimer = setTimeout(() => {
+            showVideo(blobs[currentBlobIndex]);
+          }, 3000);
+        }
+      }
+    });
+
+    canvas.addEventListener('mouseleave', () => {
+      isHovering = false;
+      blobVid.style.display = 'none';
+      clearTimeout(hoverTimer);
+    });
+
+    function showVideo(blob) {
+      blobVid.style.left = `${blob.center.x - 100}px`;
+      blobVid.style.top = `${blob.center.y - 100}px`;
+      blobVid.style.width = `${blob.radius * 1.6}px`;
+      blobVid.style.height = `${blob.radius * 1.6}px`;
+      blobVid.style.display = 'block';
+      blobVid.style.opacity = '1';
+    }
+
+    class Point {
+      constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.ox = x;
+        this.oy = y;
+        this.vx = 0;
+        this.vy = 0;
+      }
+
+      update() {
+        const dx = this.ox - this.x;
+        const dy = this.oy - this.y;
+        this.vx += dx * 0.1;
+        this.vy += dy * 0.1;
+        this.vx *= 0.9;
+        this.vy *= 0.9;
+        this.x += this.vx;
+        this.y += this.vy;
+      }
+    }
+
+    class Blob {
+      constructor(centerX, centerY, radius, color) {
+        this.points = [];
+        this.radius = radius;
+        this.color = color;
+        this.center = { x: centerX, y: centerY };
+        const numPoints = 32;
+
+        for (let i = 0; i < numPoints; i++) {
+          const angle = (i / numPoints) * Math.PI * 2;
+          const scaleY = 1 + 0.4 * Math.cos(angle);
+          const scaleX = 1 - 0.3 * Math.sin(angle);
+
+          const x = this.center.x + Math.cos(angle) * radius * scaleX;
+          const y = this.center.y + Math.sin(angle) * radius * scaleY;
+          this.points.push(new Point(x, y));
+        }
+      }
+
+      update() {
+        for (let i = 0; i < this.points.length; i++) {
+          const p = this.points[i];
+
+          if (isHovering) {
+            const dx = p.x - mouse.x;
+            const dy = p.y - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < 100) {
+              const angle = Math.atan2(dy, dx);
+              const tx = mouse.x + Math.cos(angle) * 100;
+              const ty = mouse.y + Math.sin(angle) * 100;
+              p.vx += (tx - p.x) * 0.2;
+              p.vy += (ty - p.y) * 0.2;
+            }
+          }
+
+          p.update();
+        }
+      }
+
+      draw(ctx) {
+        ctx.beginPath();
+        ctx.moveTo(this.points[0].x, this.points[0].y);
+
+        for (let i = 1; i < this.points.length; i++) {
+          const p = this.points[i];
+          const prev = this.points[(i - 1 + this.points.length) % this.points.length];
+          const cx = (p.x + prev.x) / 2;
+          const cy = (p.y + prev.y) / 2;
+          ctx.quadraticCurveTo(prev.x, prev.y, cx, cy);
+        }
+
+        ctx.closePath();
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    }
+
+    function createBlobs() {
+      const width = canvas.width = window.innerWidth;
+      const height = canvas.height = window.innerHeight;
+      mouse.x = width / 2;
+      mouse.y = height / 2;
+      let size = width < 768 ? 80 : 160;
+
+      return [
+        new Blob(width * 0.22, height * 0.4, size, '#ff0055'),
+        new Blob(width * 0.5, height * 0.6, size + 10, '#00c2ff'),
+        new Blob(width * 0.78, height * 0.4, size, '#f7941d')
+      ];
+    }
+
+    blobs = createBlobs();
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      blobs.forEach(blob => {
+        blob.update();
+        blob.draw(ctx);
+      });
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener('resize', () => {
+      blobs = createBlobs();
+      blobVid.style.display = 'none';
+    });
+  </script>
+</body>
+</html>
