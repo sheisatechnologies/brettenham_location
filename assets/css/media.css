@@ -1,0 +1,170 @@
+@media(max-width: 991px) {
+
+    .mask-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+   
+    
+
+    .slick-dots li {
+        position: relative;
+        display: inline-block;
+        width: 24px;
+        height: 5px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        color: white;
+       
+    }
+
+    .slick-dots {
+        position: absolute;
+        bottom: -25px;
+        display: block;
+        width: 100%;
+        padding: 37px;
+        margin: 4px;
+        list-style: none;
+        text-align: center;
+    }
+
+    .slider-building .slick-dots {
+        position: absolute;
+        bottom: 44px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* home page media  */
+
+/* .build-prev {
+        position: absolute;
+        top: 280px;
+        left: -212px;
+    }
+
+
+    .build-next {
+    position: absolute;
+    top: 280px !important;
+    left: -153px !important;
+} */
+
+/* 
+.build-prev {
+    margin-left: 245px;
+    margin-top: -160px
+}
+
+
+.build-next {
+    margin-left: 269px;
+    margin-top: -160px
+} */
+
+
+
+
+
+
+.text-wrapper {
+    writing-mode: horizontal-tb;  /* Arrange text vertically */
+    text-orientation: sideways-right;  /* Keep the text upright */
+  }
+
+  .text-revel{
+    font-size: 40px;
+
+}
+
+
+.slider-sp .slick-dots {
+    bottom: -5px !important;
+    left: -14px !important;
+    text-align: right;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.slider-sp-loc .slick-dots {
+    bottom: 11px !important;
+    left: -14px !important;
+    text-align: right;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.slider-localarea .custom-next-arrow {
+    display: none !important;
+}
+.slider-localarea .custom-prev-arrow {
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+@media(min-width: 991px) {
+    .mtd-1{
+        margin-top: -91px;
+    }
+    
+}
+
+
+@media (max-width: 992px) {
+    .slick-slider-contact .slide-content {
+        flex-direction: column; /* Stack content vertically */
+    }
+
+    .slick-slider-contact .image-content {
+        order: 1; /* Image appears first */
+        padding: 15px; /* Adjust padding for better spacing */
+    }
+
+    .slick-slider-contact .text-content {
+        order: 2; /* Text appears below the image */
+        padding: 15px; /* Adjust padding for better spacing */
+    }
+
+    .slick-slider-contact img {
+        max-width: 100%;
+        height: auto; /* Ensure images are responsive */
+    }
+
+  
+}
+

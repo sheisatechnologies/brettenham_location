@@ -1,0 +1,661 @@
+
+
+#content-slides{
+ padding-left: 1rem !important;
+}
+   /* Custom Arrow Styling */
+   .arrowb-loc .build-prevl,
+.arrowb-loc .build-nextl {
+    position: absolute;
+    top: 92.5%;
+    
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.arrowb-loc .build-prevl {
+    margin-left: -3px; /* Position previous arrow on the right */
+    left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb-loc .build-nextl {
+    margin-left: 70px; /* Position next arrow on the right */
+    left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb-loc .build-prevl img, 
+.arrowb-loc .build-nextl img {
+    width: 60%;
+    height: auto;
+}
+
+
+
+
+
+ul.location-tab .nav-link {
+    border: none;
+    color:#A5A5A5;
+    font-weight: 700;
+    padding: 10px 20px;
+    transition: color 0.3s;
+    font-family: 'Altform-Bold', Helvetica, Arial, sans-serif; /* Use the custom font */
+}
+
+        .location-tab .nav-link.active {
+            color: #007bff; /* Active tab color */
+            border: none;
+        }
+        .location-tab {
+            border-bottom: none; /* Remove bottom border on tabs */
+            margin-top: -68px;
+        }
+        .slider {
+            background-color: #FF9222; /* Slider background color */
+            padding: 20px 0;
+            /* border-radius: 5px; */
+            
+        }
+        .slider .slick-slide {
+            display: flex !important;
+            justify-content: center;
+            align-items: center;
+        }
+        .slider img {
+            max-width: 80%;
+            height: auto;
+            padding: 10px; /* Optional: Adds padding around the logos */
+        }
+
+
+.contact{
+
+position: relative;
+}
+
+
+/* Custom Arrow Styling */
+.arrowb .build-prev,
+.arrowb .build-next {
+position: absolute;
+top: 7%;
+transform: translateY(-50%);
+z-index: 1000;
+width: 30px;
+height: 30px;
+cursor: pointer;
+}
+
+.arrowb .build-prev {
+margin-left: 213px; /* Position previous arrow on the right */
+left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb .build-next {
+margin-left: 268px; /* Position next arrow on the right */
+left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb .build-prev img, 
+.arrowb .build-next img {
+width: 60%;
+height: auto;
+}
+
+/* Customizing Dots */
+.connectivity-np .slick-dots {
+    position: absolute;
+    bottom: -41px;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+    right: -15px;
+}
+.connectivity-np .slick-dots li {
+    margin: 0 5px;
+}
+
+.connectivity-np .slick-dots li button {
+    width: 10px; /* Adjust dot size */
+    height: 10px; /* Adjust dot size */
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+/* Remove the default black dot behind the button */
+.slider-connectivity .slick-dots li button:before {
+  content: ''; /* Remove the default black dot */
+}
+
+
+.connectivity-np .slick-dots li.slick-active button {
+    background-color: red; /* Active dot color */
+}
+
+
+
+
+
+
+
+/* -------------------------local slider home page 
+-----------------------------------------------------*/
+
+
+.slider-sp .slider-caption {
+    display: none;       /* Hide by default, as set earlier */
+  margin-top: 10px;    /* Add a small gap between the image and the caption */
+  font-size: 16px;     /* Optional: Adjust the font size if needed */
+  color: #333;         /* Optional: Adjust the caption text color */
+  text-align: left;  /* Center-align the caption */
+}
+
+
+.slider-localarea  .custom-prev-arrow, .custom-next-arrow {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 150px;
+    right: 0;
+}
+
+
+.slider-localarea   .custom-prev-arrow {
+    right: 50px; /* Adjust this value as needed */
+}
+
+.slider-localarea  .custom-next-arrow {
+    right: 10px; /* Position closer to the right edge */
+}
+
+/* Remove the default black dot behind the button */
+.slider-localarea .slick-dots li button:before {
+  content: ''; /* Remove the default black dot */
+}
+
+
+
+.slider-sp-loc .slick-dots {
+    bottom: 26px; /* Adjust as needed */
+    left: 69px;
+    text-align: right;
+    z-index: 10; /* Ensures dots appear above other elements */
+    position: relative; /* Works with z-index */
+}
+
+@media (max-width: 1200px) {
+    .slider-sp .slick-dots {
+        bottom: -3px;
+        left: 69px;
+        text-align: right;
+        z-index: 10;
+        position: relative;
+    }
+    }
+
+.slider-sp-loc .slick-dots li {
+  margin: 0 3px; /* Reduce space between dots */
+}
+
+.slider-sp-loc .slick-dots li button {
+  width: 10px;    /* Make dots smaller */
+  height: 10px;   /* Smaller dots */
+  background-color: #D9D9D9; /* Initial light gray color */
+  border: none;   /* Remove borders */
+  border-radius: 50%; /* Keep the dots circular */
+  outline: none;
+  transition: background-color 0.3s; /* Smooth transition */
+}
+
+/* Remove the default black dot behind the button */
+.slider-sp .slick-dots li button:before {
+  content: ''; /* Remove the default black dot */
+}
+
+/* Remove the default black dot behind the button */
+.slick-slider-contact .slick-dots li button:before {
+  content: ''; /* Remove the default black dot */
+}
+
+
+/* Active dot is fully red */
+.slider-sp .slick-dots li.slick-active button {
+  background-color: #FF4602; /* Active dot color */
+}
+
+/* Hover effect */
+.slider-sp .slick-dots li button:hover {
+  background-color: rgba(255, 0, 0, 0.5); /* Slight hover effect */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.indicator-location{
+    margin-top: -120px !important;
+}
+
+
+
+.custom-navigation{
+
+    margin-top: -45px !important;
+}
+
+
+
+
+
+
+/* Center the slide indicator between the arrows */
+.slide-indicator {
+    font-size: 13px; /* Adjust the size of the slide indicator text */
+    
+    color: #333; /* Adjust the color as needed */
+    margin-top: -99px !important;
+    margin-left: 35px !important;
+}
+
+
+
+
+
+@media (max-width: 991px) {
+
+       /* Custom Arrow Styling */
+   .arrowb-loc .build-prevl,
+   .arrowb-loc .build-nextl {
+       position: absolute;
+       
+       top: 89.5% !important;
+       transform: translateY(-50%);
+       z-index: 1000;
+       width: 30px;
+       height: 30px;
+       cursor: pointer;
+   }
+
+    #content-slides {
+    padding-left: 2.5rem !important;
+}
+
+
+    .slider-sp-loc {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 70%;
+}
+
+    .slider-sp .slick-slide img {
+        width: 100%;
+        height: 212px;
+    }
+
+    .slider-home .slick-slide img {
+        width: 100%;
+        height: 500px;
+    }
+
+    
+    .container {
+        width: 100% !important;
+        /* padding-left: 15px !important;
+        padding-right: 15px !important; */
+       
+        margin: 0 !important;
+        padding-bottom: 20px;
+    }
+
+    .navbar {
+        padding: 15px; /* Add padding inside navbar */
+        background-color: #fff; /* Ensure background color for visibility */
+    }
+/* 
+    .navbar-toggler {
+        margin-right: 15px;
+        position: absolute; 
+        right: 15px;
+        top: 10px;
+    } */
+
+    .nav-item {
+        width: 100%; /* Full width for each item */
+        text-align: center; /* Center align nav links */
+    }
+
+    .nav-link {
+        padding: 10px 0; /* Adjust padding for mobile links */
+        font-size: 16px; /* Increase font size for better readability */
+    }
+
+    .navbar-collapse {
+        justify-content: center; /* Center align the collapsed menu */
+        padding-top: 10px; /* Add space above the collapsed items */
+    }
+
+    /* Avoid overflow on small screens */
+    html, body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* If needed, you can force all content within a specific width */
+    /* .row {
+        max-width: 100% !important;
+        margin: 0 !important;
+    } */
+
+    .location-tab .nav-link {
+        flex: 1;
+        padding: 5px 5px !important; /* Reduced padding with !important */
+        font-size: 17px;
+        margin: 0 1px !important; /* Minimized margin with !important */
+    }
+    .location-tab {
+        display: flex; /* Ensure items are in a row */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 0; /* Eliminate any gaps in flex container */
+        margin-top: -10px;
+    }
+    .slider img {
+        max-width: 90%;
+    }
+
+   
+    .location-tab .nav-item {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .slider-connect .custom-prev-arrow, .slider-connect .custom-next-arrow {
+   display: none !important;
+}
+
+.map-loc{
+    padding-top: 60px;
+}
+
+
+
+   
+}
+
+
+
+@media (max-width: 768px) {
+
+    .controls-container {
+    position: absolute;
+    top: 77px !important;
+    left: 45px !important;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 10;
+}
+
+
+    .slide-indicator {
+    font-size: 13px;
+    color: #333;
+    margin-top: -100px !important;
+    margin-left: 35px !important;
+}
+}
+
+
+.slick-slider-contact .slick-dots {
+    position: absolute;
+    top: 48px;
+    right: 10px;
+    display: flex;
+    justify-content: flex-start;
+   
+}
+
+.slick-slider-contact .slick-dots li {
+    margin: 0 5px; /* Adjust spacing between dots */
+}
+
+.tab-pane .slick-dots li button {
+    width: 10px; /* Adjust dot size */
+    height: 10px; /* Adjust dot size */
+    border-radius: 50%;
+    background-color: #D9D9D9;
+    border: none;
+}
+
+.slider-connect .slick-dots li button:before {
+  content: ''; /* Remove the default black dot */
+}
+
+
+.slick-dots li.slick-active button {
+    background-color: #FF4602; /* Active dot color */
+}
+
+.slider-connect .slick-prev, 
+.slider-connect .slick-next {
+    display: none !important; /* Hide default arrows */
+}
+
+.slider-connect .custom-prev-arrow,
+.slider-connect .custom-next-arrow {
+    background: transparent; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer */
+    position: absolute; /* Position them absolutely */
+    top: 10px; /* Position from the top */
+}
+
+
+.slider-connect .custom-prev-arrow {
+    right: 50px; /* Adjust this value as needed */
+}
+
+.slider-connect .custom-next-arrow {
+    right: 30px; /* Position closer to the right edge */
+}
+
+
+
+@media (max-width: 991px) {
+    .mask-container, .wrapper-buil {
+        position: relative;
+        margin-bottom: 20px; /* Add margin to push content down */
+        z-index: 1; /* Ensure it stays above lower layers if needed */
+    }
+}
+
+
+@media (max-width: 991px) {
+
+    .arrowb .build-prev, .arrowb .build-next {
+    position: absolute;
+    top: 61%;
+
+    transform: translateY(-50%);
+    z-index: 1000;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.slick-slider-contact .slick-dots {
+    position: absolute;
+    top: 325px;
+    right: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+    
+    .mask-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .custom-navigation {
+    margin-top: 78px !important;
+}
+
+.arrowb .build-next {
+    margin-left: 54px;
+    left: unset;
+}
+
+.arrowb .build-prev {
+    margin-left: 15px;
+    left: unset;
+}
+
+
+.btn-arrow img {
+    position: absolute;
+    width: 24px;
+    height: auto;
+    transition: transform 0.3s ease;
+    top: 55px !important;
+}
+}
+
+
+
+
+a.loc-tab.active {
+    color: #000 !important;
+}
+
+
+/* Additional adjustments for mobile */
+@media (max-width: 768px) {
+
+    .slider-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-top: -356px !important;
+    right: 70px;
+    position: absolute;
+}
+
+
+.wrapper-buil {
+    width: 100%;
+    height: auto;
+    padding: 10px; /* Optional: Add padding to avoid overlapping with text */
+}
+
+
+
+    /* Adjust .wrapper-buil img for mobile responsiveness */
+.wrapper-buil img {
+width: 100%;
+height: auto;
+object-fit: contain; /* Prevents stretching */
+display: block;
+}
+
+/* Ensure the text doesn't overlap with the image */
+.mask-container {
+    margin-top: 20px; /* Adjust as needed to avoid overlap */
+}
+
+
+}
+
+.slider-navigation {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+           
+            margin-top: -286px;
+            right: 40px;
+    position: absolute;
+        }
+        .btn-arrow {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            
+        }
+        .btn-arrow img {
+            position: absolute;
+            width: 24px;
+            height: auto;
+            transition: transform 0.3s ease;
+            top: 20px;
+        }
+        .btn-arrow:hover img {
+            transform: scale(1.2);
+        }
+        .slider {
+            position: relative;
+        }
+    
+
+
+    .controls-container {
+      position: absolute;
+      top: -36px;
+      left: 26px;
+      display: flex;
+      align-items: center;
+      gap: 170px; /* Adds spacing between arrows and dots */
+      z-index: 10;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      background-color: #D9D9D9;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 0.3s;
+    }
+    .dot.active {
+      background-color: red;
+    }
+    #content-section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .slide {
+      display: none;
+    }
+    .slide.active {
+      display: block;
+    }

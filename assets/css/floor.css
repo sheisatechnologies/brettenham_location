@@ -1,0 +1,866 @@
+
+
+
+    *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    #dataTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: #ECF5F5;
+}
+
+tbody, td, tfoot, th, thead, tr {
+    border-color: inherit;
+    border-style: solid;
+    border-width: 0;
+    width: 25%;
+}
+
+.level-column,
+.level-head {
+    border-bottom: 1px solid black; /* Only show bottom border */
+    padding: 8px;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+.table-head{
+    font-weight: 700;
+    font-family: 'Altform-Bold', Helvetica, Arial, sans-serif;
+}
+.total-column {
+    border-bottom: none;
+}
+
+th {
+    font-weight: bold;
+}
+
+.clicked {
+    background-color: #BDE2DF; /* Light green background for selected cells */
+    outline: 3px solid black; /* Use outline instead of border */
+    outline-offset: -3px; /* Ensures outline looks like a border */
+    box-sizing: border-box; /* Ensure the cell size doesn't change */
+}
+
+.sum-row {
+    font-weight: bold;
+}
+
+.level-column {
+    font-weight: bold;
+    cursor: default;
+}
+
+/* Change table row color on hover */
+#dataTable tbody tr:hover {
+    background-color: transparent;  /* Light gray color for hover effect */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+
+        
+
+/* Mobile responsiveness */
+@media (max-width: 991px) {
+    .container, .row {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .col-lg-10, .col-lg-12, .col-lg-3, .col-lg-9, .col-lg-1 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .img-fluid {
+        max-width: 100%;
+        height: auto;
+    }
+    h1.rotate {
+        transform: rotate(0deg);
+        font-size: 24px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    p, td {
+        font-size: 14px;
+        text-align: center;
+    }
+    .text-floor{
+        text-align: left;
+    }
+
+    .specific-p{
+        text-align: left !important;
+        margin-left: -15px;
+    }
+    #dataTable {
+        width: 100%;
+        font-size: 12px;
+    }
+    /* Adjusting button sizes for mobile */
+    .btn {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    /* Hide non-essential large images on mobile */
+    .d-none.d-lg-block {
+        display: none !important;
+    }
+}
+
+
+
+/* BRETTENHAM HOUSE
+/* OTHER ALIAS LTD
+/* ---------------------------------------------- */
+
+/* ---------------------------------------------- */
+/* VARIABLES
+/* ---------------------------------------------- */
+:root {
+    --blue: #0048C6;
+    --teal: #62BCB3;
+    --green: #168771;
+    --orange: #FF4602;
+    --mustard: #FF9222;
+    --black: #000000;
+    --white: #FFFFFF;
+    --off-black: #333333;
+    --grey: #B6B6B6FF;
+    --light-grey: #ECF5F5;
+    --ziggurat: #BDE2DF;
+    --breaker-bay: #6CA6A2;
+    --edgewater: #CAE2E0;
+}
+
+/* ---------------------------------------------- */
+/* @FONT-FACE
+/* ---------------------------------------------- */
+
+@font-face {
+    font-family: 'Altform-Regular';
+    src: url('../fonts/Altform-Regular.woff2') format('woff2'),
+    url('../fonts/Altform-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Altform-Bold';
+    src: url('../fonts/Altform-Bold.woff2') format('woff2'),
+    url('../fonts/Altform-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+.bg-location{
+    background-color: var(--mustard) !important;
+}
+
+.bg-download{
+    background-color: var(--green) !important;
+}
+
+.bg-floorplan{
+    background-color: var(--teal) !important;
+}
+
+.bg-contact{
+    background-color: var(--blue) !important;
+}
+
+
+
+
+
+
+/* universal header code */
+
+#fixedLogo{
+    display: none;
+}
+
+/* universal header code */
+
+
+
+
+
+
+
+
+
+/* index  custom slide slick */
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 50px;
+    margin: 4px;
+    list-style: none;
+    text-align: center;
+}
+
+.slick-dots li {
+    position: relative;
+    display: inline-block;
+    width: 59px;
+    height: 5px;
+    margin: 0 5px;
+    padding: 0;
+    cursor: pointer;
+    color: white;
+   background-color: var(--white);
+}
+
+.slick-dots li button {
+    display: none;
+}
+
+.slick-dots li:hover{
+    background-color: var(--orange);
+}
+
+/* index  custom slide slick */
+
+
+
+ul .nav-link {
+    border: none;
+    color:#A5A5A5;
+    font-weight: 700; 
+    padding: 10px 20px;
+    transition: color 0.3s;
+    font-family: 'Altform-Bold', Helvetica, Arial, sans-serif; /* Use the custom font */
+}
+
+@media (max-width: 991px) {
+    .mask-container, .wrapper-buil {
+        position: relative;
+        margin-bottom: 20px; /* Add margin to push content down */
+        z-index: 1; /* Ensure it stays above lower layers if needed */
+    }
+}
+
+
+
+/* Additional adjustments for mobile */
+@media (max-width: 991px) {
+
+
+    .wrapper-buil {
+        width: 100%;
+        height: auto;
+        padding: 10px; /* Optional: Add padding to avoid overlapping with text */
+    }
+
+    .wrapper-buil img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+        /* Adjust .wrapper-buil img for mobile responsiveness */
+.wrapper-buil img {
+    width: 100%;
+    height: auto;
+    object-fit: contain; /* Prevents stretching */
+    display: block;
+}
+
+    /* Ensure the text doesn't overlap with the image */
+    .mask-container {
+        margin-top: 20px; /* Adjust as needed to avoid overlap */
+    }
+}
+
+
+
+
+@media (max-width: 991px) {
+    .mask-container {
+        position: relative;
+        width: 100%;
+        height:auto !important;
+        overflow: hidden;
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+     /* all red container revel animation */
+     .image-wrapper-ma {
+        position: relative;
+        overflow: hidden;
+        width: 800px; /* Increased width */
+        height: 500px; /* Increased height */
+        flex-shrink: 0;
+        padding: 20px;
+        background-color: red;
+    }
+
+    /* Red container to cover the image */
+    .image-reveal-ma {
+        position: absolute;
+        top: 0;
+        right: 0; /* Positioned on the right */
+        width: 100%;
+        height: 100%;
+        background: red; /* Red reveal container */
+        transform: translateX(0); /* Start fully covering the image */
+        z-index: 1; /* Ensure it is on top of the image */
+    }
+
+    /* Image styling */
+    .image-wrapper-ma img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    /* Paragraph styling */
+    .text-content-ma {
+        max-width: 400px;
+        font-size: 18px;
+        line-height: 1.6;
+    }
+
+     /* all red container revel animation */
+
+
+
+
+
+
+
+
+ /* Style for the overall slider */
+ .slider-sp {
+    width: 100%; /* Control the overall width of the slider */
+    margin: 0 auto; /* Center the slider */
+    overflow: hidden; /* Hide overflow to control visibility */
+}
+
+/* Slick list container */
+.slider-sp .slick-list {
+    overflow: visible; /* Allow slides to overflow */
+    padding: 0; /* Remove default padding */
+}
+
+/* Individual slide */
+.slider-sp .slick-slide img {
+    width: 100%; /* Ensure images take full slide width */
+    border-radius: 10px; /* Optional styling for rounder edges */
+}
+
+/* General slide styling */
+.slider-sp .slick-slide {
+    opacity: 0.8; /* Slightly lower opacity for non-focused slides */
+    transition: opacity 0.3s ease;
+    margin: 0 15px;
+}
+
+/* Style for center slide */
+.slider-sp .slick-center {
+    opacity: 1; /* Fully visible center slide */
+}
+
+
+
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
+
+
+
+
+.slide-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+/* .text-content {
+    width: 50%;
+} */
+
+.image-content img {
+    width: 100%;
+    height: auto;
+}
+
+/* Custom arrow styling */
+.slick-prev, .slick-next {
+    position: absolute;
+    bottom: 10px; /* Place arrows at the bottom */
+    left: 20px;   /* Both arrows start from the bottom-left */
+    z-index: 10;
+    font-size: 24px;
+    color: black;
+    background: none;
+    border: none;
+    top: 110% !important;
+}
+
+
+
+.slick-next {
+    left: 60px; /* Position the right arrow slightly to the right of the left arrow */
+}
+
+/* Hide default arrows */
+.slick-prev:before, .slick-next:before {
+    content: none;
+}
+
+/* --------------------------------- multi slider carausal with text ---------------- */
+/* --------------------------------- multi slider carausal with text ---------------- */
+
+
+   /* Resize the arrow buttons */
+   .custom-prev-arrow, .custom-next-arrow {
+    background: none;
+    border: none;
+    font-size: 18px; /* Adjust the size of the icons here */
+    color: #333; /* Adjust the color as needed */
+    cursor: pointer;
+}
+
+/* Add some spacing around the arrows */
+.custom-prev-arrow {
+   margin-top: -60px;
+   margin-left: -20px;
+}
+
+.custom-next-arrow {
+    margin-top: -60px;
+    margin-left: 10px;
+}
+
+.custom-prev-arrow:focus, .custom-next-arrow:focus,
+.custom-prev-arrow:active, .custom-next-arrow:active {
+    color: #333; /* Ensure the arrow color remains consistent on click */
+}
+
+/* Ensure arrows are always visible */
+.custom-prev-arrow, .custom-next-arrow {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: inline-block !important;
+}
+
+/* Center the slide indicator between the arrows */
+.slide-indicator {
+    font-size: 13px; /* Adjust the size of the slide indicator text */
+    
+    color: #333; /* Adjust the color as needed */
+    margin-top: -11px;
+    margin-left: 35px !important;
+}
+
+
+
+
+.build-prev{
+    position: absolute;
+    top: 100px;
+    left: -70px;
+}
+
+.build-next{
+    position: absolute;
+    top: 100px;
+    left: -40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* model css */
+
+    /* Styling for the Expand modal */
+    .modal {
+            display: none; /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: white; /* Black background with opacity */
+            opacity: 1;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            margin: auto;
+    display: block;
+    width: 100%;
+    /* max-width: 1444px; */
+    margin-top: 0px;
+    padding: 83px;
+    border: none;
+    box-shadow: none;
+            
+        }
+
+        /* Image within modal */
+        .modal-content img {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Close Button */
+        .close {
+            position: absolute;
+            top: 100px;
+            right: 35px;
+            color: black;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 555;
+        }
+
+        /* Close button hover effect */
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+
+
+        .floor-container {
+            height: 200vh; /* To allow scrolling */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+           
+           
+        }
+        .floorplan {
+            width: 100vw; /* Full viewport width */
+            max-width: 200px; /* Initial small size */
+            overflow: hidden;
+        }
+        
+
+        .specific-p {
+        text-indent: -1.3em; /* Negative indent to move dash out of view */
+        padding-left: 1em; /* Adds space to align the text properly */
+    }
+
+        
+
+/* Mobile responsiveness */
+/* General mobile adjustments */
+@media (max-width: 991px) {
+    .container {
+        width: 100% !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        margin: 0 !important;
+        padding-bottom: 20px;
+    }
+
+    .navbar {
+        padding: 15px; /* Add padding inside navbar */
+    }
+
+    .navbar-toggler {
+        margin-right: 0; /* Ensure the toggle button stays in view */
+    }
+
+    .nav-item {
+        width: 100%; /* Full width for each item */
+        text-align: center; /* Center align nav links */
+    }
+
+    .nav-link {
+        padding: 10px 0; /* Adjust padding for mobile links */
+    }
+
+    .navbar-collapse {
+        justify-content: center; /* Center align the collapsed menu */
+    }
+
+    /* Avoid overflow on small screens */
+    html, body {
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+
+    /* If needed, you can force all content within a specific width */
+    /* .row {
+        max-width: 100% !important;
+        margin: 0 !important;
+    } */
+}
+
+
+@media (max-width: 1450px) {
+    .nav-tabs {
+        border-bottom: none;
+        position: absolute;
+        margin-left: 25rem;
+        margin-top: 117px;
+    }
+}
+
+@media (min-width: 1451px) {
+
+    .nav-tabs {
+        border-bottom: none;
+        position: absolute;
+        margin-left: 33rem;
+        margin-top: 115px;
+}
+
+}
+
+
+
+
+/* tab responsive code  */
+
+
+/* Make the tab navigation responsive */
+/* Make the tab navigation responsive */
+@media (max-width: 991px) {
+    #floorplanTabs {
+        display: flex;
+        flex-wrap: nowrap; /* Keep tabs horizontal */
+        overflow-x: auto; /* Enable horizontal scrolling if needed */
+        justify-content: center; /* Center the tab buttons */
+        white-space: nowrap; /* Prevent wrapping */
+    }
+
+    .nav-item {
+        flex-grow: 1; /* Ensure each tab item takes up equal space */
+        text-align: center; /* Center the tab text */
+    }
+
+    .nav-link {
+        font-size: 14px;
+        padding: 8px 10px;
+        display: inline-block; /* Keep tabs inline */
+    }
+
+    /* Ensure the tab content images are centered */
+    .tab-content img {
+        display: block;
+        margin: 0 auto; /* Center the image */
+        width: 100%; /* Ensure images scale down to fit the screen */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Prevent the image from exceeding the width */
+    }
+
+    /* Adjust buttons */
+    .tab-content .btn {
+        width: 100%; /* Full width buttons for better UX on mobile */
+        font-size: 16px;
+        padding: 10px 20px;
+        margin-bottom: 10px;
+    }
+
+    /* Adjust the indicator image */
+    .image-floor {
+        display: block;
+        margin: 0 auto; /* Center the image */
+        width: 100%; /* Ensure indicator images take full width */
+        max-width: 100%; /* Prevent the image from exceeding the width */
+    }
+
+    /* Adjust text within tabs */
+    /* .tab-content h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .tab-content p {
+        font-size: 14px;
+        text-align: center;
+    } */
+}
+
+
+
+
+
+.image-floor{
+    margin-left: 50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+.gsap-img-animation .wrapper {
+            position: absolute;
+            top: 0;
+            width: 50vw; /* Use viewport width for responsiveness */
+            height: 100%;
+            background-color: white; /* Change color as needed */
+            z-index: 10;
+        }
+
+        .gsap-img-animation .left {
+            left: 0;
+            transform: translateX(0); /* Start at the left side */
+        }
+
+        .gsap-img-animation .right {
+            right: 0;
+            transform: translateX(0); /* Start at the right side */
+        }
+
+       
+
+        .gsap-img-animation {
+    position: relative; /* Ensure the parent is positioned */
+    width: 100%; /* Set the desired width for the container */
+    height: 881px; /* Set a fixed height for the container */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.gsap-img-animation .ani-img {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;   
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Fill the width of the container */
+    height: 100%; /* Fill the height of the container */
+    object-fit: cover; /* Maintain aspect ratio and fill the container */
+    z-index: 5;
+    opacity: 1;
+}
+
+
+
+        /* Spacer for scrolling */
+        .gsap-img-animation .spacer {
+            height: 100vh; /* Spacer to make scrolling easier */
+        }
+
+        /* Content styles */
+        .gsap-img-animation .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+            background-color: rgba(240, 240, 240, 0.9); /* Slightly transparent background for content */
+            margin-top: 50px; /* Space above content */
+        }
+
+        .gsap-img-animation h1 {
+            text-align: center;
+            margin: 20px 0; /* Reduced margin */
+        }
+
+        .gsap-img-animation p {
+            max-width: 800px; /* Limit paragraph width */
+            margin: 20px auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 600px) {
+            .gsap-img-animation .content {
+                margin-top: 20px; /* Reduced margin for mobile devices */
+            }
+
+            .gsap-img-animation h1 {
+                font-size: 1.5em; /* Adjust heading size for smaller screens */
+            }
+        }
+
+
+        a.floorplan-tab.active {
+    color: #000 !important;
+}
+
+        
+.level-column a {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit color from parent */
+    font-weight: 700; /* Make text bold */
+    /* padding: 10px 20px; */
+    display: inline-block; /* Fill the cell space */
+}
+
+.level-column a:hover, 
+.level-column a:visited, 
+.level-column a:focus, 
+.level-column a:active {
+    color: inherit; /* Ensure color remains the same */
+    text-decoration: none; /* Ensure no underline on interaction */
+}
+
+
+@media (max-width: 991px) {
+            .nav-tabs {
+                display: none; /* Hide tabs on mobile */
+            }
+
+
+            /* Custom styling for mobile dropdown */
+        #floorplanDropdown {
+            border: none; /* Remove border */
+            font-size: 1rem; /* Increase font size */
+            padding: 10px 20px 10px 10px; /* Add padding */
+            color: #333; /* Dark text color */
+            appearance: none; /* Remove default styling */
+            border-radius: 8px; /* Rounded corners */
+            background-image: url(./assets/images/arrow/dropdown-arrow.png); /* Custom arrow */
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+            background-size: 16px;
+        }
+
+        /* Adjust placeholder color */
+        #floorplanDropdown option[disabled] {
+            color: #aaa; /* Lighter color for placeholder */
+        }
+        }
+
+        
+

@@ -1,0 +1,109 @@
+
+
+
+.contact{
+
+position: relative;
+}
+/* Custom Arrow Styling */
+.arrowb-con .build-prev,
+.arrowb-con .build-next {
+position: absolute;
+top: 100%;
+transform: translateY(-50%);
+z-index: 1000;
+width: 30px;
+height: 30px;
+cursor: pointer;
+}
+
+.arrowb-con .build-prev {
+margin-left: -3px; /* Position previous arrow on the right */
+left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb-con .build-next {
+margin-left: 70px; /* Position next arrow on the right */
+left: unset; /* Ensure it's not on the left */
+}
+
+.arrowb-con .build-prev img, 
+.arrowb-con .build-next img {
+width: 60%;
+height: auto;
+}
+
+/* Customizing Dots */
+.slick-dots {
+position: absolute;
+bottom: -40px;
+right: 20px; /* Move dots to the right */
+left: unset; /* Remove any left alignment */
+list-style: none;
+display: flex;
+gap: 10px; /* Spacing between dots */
+justify-content: flex-end; /* Align dots to the right */
+}
+
+.slick-dots li {
+margin: 0;
+padding: 0;
+}
+
+.slick-dots li button {
+background-color: transparent; /* Remove default background */
+border: none;
+padding: 0;
+width: 15px; /* Custom dot size */
+height: 15px;
+border-radius: 50%; /* Circular dots */
+background: url('assets/images/dot-inactive.svg') no-repeat center center; /* Inactive dot image */
+background-size: cover;
+}
+
+/* Active Dot Styling */
+.slick-dots li.slick-active button {
+background: url('assets/images/dot-active.svg') no-repeat center center; /* Active dot image */
+background-size: cover;
+color: red;
+background-color: red;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+/* .contact .build-prev,
+.contact .build-next {
+    width: 25px;
+    height: 25px;
+    top: 50%;
+    right: 20px;
+    left: unset;
+} */
+
+/* .contact .build-next {
+    right: 5px;
+} */
+
+.contact .slick-dots {
+    bottom: -30px;
+    right: 10px; /* Align dots to the right for smaller screens */
+    left: unset;
+}
+}
+.arrowb{
+
+margin-top: -21px;
+}
+
+@media (max-width: 768px) {
+
+.slide-indicator {
+font-size: 13px;
+color: #333;
+margin-top: 14px !important;
+margin-left: 35px !important;
+}
+
+
+}
+
